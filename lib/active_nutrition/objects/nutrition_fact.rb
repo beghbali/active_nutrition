@@ -17,7 +17,7 @@ module ActiveNutrition
       end
 
       def attributes
-        @attributes ||= base_model.attribute_names
+        @attributes ||= base_model.attributes.merge(base_model.definition.attributes)
       end
     end
   end
