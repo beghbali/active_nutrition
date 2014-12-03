@@ -14,7 +14,7 @@ module ActiveNutrition
       end
 
       def self.wrap(obj)
-        if obj.is_a?(Array)
+        if obj.respond_to? :map
           obj.map { |o| new(o) }
         else
           new(obj)
